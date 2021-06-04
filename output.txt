@@ -1,0 +1,1 @@
+Enter the number: Enter the position of bit to get: New number is: 1
