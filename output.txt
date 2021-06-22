@@ -1,1 +1,6 @@
-ppp3.14p3.143.143.14ip
+abc
+acb
+bac
+bca
+cab
+cba
