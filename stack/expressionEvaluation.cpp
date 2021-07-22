@@ -50,11 +50,11 @@ int evalPostfix(string expression)
             if (expression[i] == '+')
                 s.push(a + b);
             else if (expression[i] == '-')
-                s.push(a - b);
+                s.push(b - a);
             else if (expression[i] == '*')
                 s.push(a * b);
             else if (expression[i] == '/')
-                s.push(a / b);
+                s.push(b / a);
             else if (expression[i] == '^')
                 s.push(pow(a, b));
             else
@@ -71,7 +71,7 @@ int main()
     freopen("../output.txt", "w", stdout);
 #endif
 
-    string prefixExpression = "-+7*45+20", postfixExpression = "02+54*7+-";
+    string prefixExpression = "-+7*45+20", postfixExpression = "211--";
     cout << evalPrefix(prefixExpression) << endl;
     cout << evalPostfix(postfixExpression) << endl;
 
