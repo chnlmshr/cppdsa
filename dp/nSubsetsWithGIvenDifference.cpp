@@ -1,18 +1,21 @@
+// Program is based on minSubsetDifference
+
+// This is also known as Target Sum Problem
+
 #include <bits/stdc++.h>
 
 using namespace std;
 
-// this function Same as isSubsetsum
-map<pair<int, int>, bool> mt;
-bool topdown(vector<int> v, int s)
+map<pair<int, int>, int> mt;
+int topdown(vector<int> v, int s)
 {
     for (int i = 0; i <= v.size(); i++)
     {
-        mt[make_pair(0, i)] = false;
+        mt[make_pair(0, i)] = 0;
     }
     for (int i = 0; i <= s; i++)
     {
-        mt[make_pair(i, 0)] = true;
+        mt[make_pair(i, 0)] = 1;
     }
 
     for (int i = 1; i <= v.size(); i++)
@@ -20,7 +23,7 @@ bool topdown(vector<int> v, int s)
         for (int j = 1; j <= s; j++)
         {
             if (v[i - 1] <= j)
-                mt[make_pair(i, j)] = mt[make_pair(i - 1, j - v[i - 1])] || mt[make_pair(i - 1, j)];
+                mt[make_pair(i, j)] = mt[make_pair(i - 1, j - v[i - 1])] + mt[make_pair(i - 1, j)];
             else
                 mt[make_pair(i, j)] = mt[make_pair(i - 1, j)];
         }
@@ -35,18 +38,15 @@ int main()
     freopen("../output.txt", "w", stdout);
 #endif
 
-    int n, s;
-    cin >> n;
-    int vs = 0;
+    int n, d;
+    cin >> n >> d;
+    int vs = 0, c = 0;
     vector<int> v(n);
     for (auto &&i : v)
     {
         cin >> i;
         vs += i;
     }
-    if (vs % 2)
-        cout << false;
-    else
-        cout << topdown(v, vs / 2);
+    cout << topdown(v, (d + vs) / 2);
     return 0;
 }

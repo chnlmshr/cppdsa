@@ -2,9 +2,9 @@
 
 using namespace std;
 
-// this function Same as isSubsetsum
 map<pair<int, int>, bool> mt;
-bool topdown(vector<int> v, int s)
+// this function Same as isSubsetsum
+void topdown(vector<int> v, int s)
 {
     for (int i = 0; i <= v.size(); i++)
     {
@@ -25,7 +25,6 @@ bool topdown(vector<int> v, int s)
                 mt[make_pair(i, j)] = mt[make_pair(i - 1, j)];
         }
     }
-    return mt[make_pair(v.size(), s)];
 }
 
 int main()
@@ -35,7 +34,7 @@ int main()
     freopen("../output.txt", "w", stdout);
 #endif
 
-    int n, s;
+    int n;
     cin >> n;
     int vs = 0;
     vector<int> v(n);
@@ -44,9 +43,12 @@ int main()
         cin >> i;
         vs += i;
     }
-    if (vs % 2)
-        cout << false;
-    else
-        cout << topdown(v, vs / 2);
+    topdown(v, vs / 2);
+    for (int i = vs / 2; i >= 0; i--)
+        if (mt[make_pair(n, i)])
+        {
+            cout << vs - 2 * i;
+            break;
+        }
     return 0;
 }
