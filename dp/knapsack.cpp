@@ -26,7 +26,7 @@ int memoization(vector<pair<int, int>> a, int c)
 
 map<pair<int, int>, int> tdp;
 
-int topdown(vector<pair<int, int>> a, int c)
+int tabulation(vector<pair<int, int>> a, int c)
 {
     for (int i = 0; i <= a.size() + 1; i++)
     {
@@ -78,7 +78,7 @@ int main()
 
     cout << memoization(a, c) << endl;
 
-    cout << topdown(a, c);
+    cout << tabulation(a, c);
 
     return 0;
 }

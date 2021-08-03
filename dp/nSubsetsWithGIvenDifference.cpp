@@ -7,7 +7,7 @@
 using namespace std;
 
 map<pair<int, int>, int> mt;
-int topdown(vector<int> v, int s)
+int tabulation(vector<int> v, int s)
 {
     for (int i = 0; i <= v.size(); i++)
     {
@@ -47,6 +47,6 @@ int main()
         cin >> i;
         vs += i;
     }
-    cout << topdown(v, (d + vs) / 2);
+    cout << tabulation(v, (d + vs) / 2);
     return 0;
 }

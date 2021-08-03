@@ -3,7 +3,7 @@
 using namespace std;
 
 map<pair<int, int>, int> mt;
-int topdown(vector<int> v, int s)
+int tabulation(vector<int> v, int s)
 {
     for (int i = 0; i <= v.size(); i++)
     {
@@ -41,6 +41,6 @@ int main()
     {
         cin >> i;
     }
-    cout << topdown(v, s);
+    cout << tabulation(v, s);
     return 0;
 }

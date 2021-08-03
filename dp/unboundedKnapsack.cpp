@@ -4,7 +4,7 @@ using namespace std;
 
 map<pair<int, int>, int> tdp;
 
-int topdown(vector<pair<int, int>> a, int c)
+int tabulation(vector<pair<int, int>> a, int c)
 {
     for (int i = 0; i <= a.size() + 1; i++)
     {
@@ -54,7 +54,7 @@ int main()
     for (auto &&i : a)
         cin >> i.first >> i.second;
 
-    cout << topdown(a, c);
+    cout << tabulation(a, c);
 
     return 0;
 }

@@ -20,7 +20,7 @@ bool memoization(vector<int> v, int s)
 }
 
 map<pair<int, int>, bool> mt;
-bool topdown(vector<int> v, int s)
+bool tabulation(vector<int> v, int s)
 {
     for (int i = 0; i <= v.size(); i++)
     {
@@ -59,6 +59,6 @@ int main()
         cin >> i;
     }
     cout << memoization(v, s);
-    cout << topdown(v, s);
+    cout << tabulation(v, s);
     return 0;
 }

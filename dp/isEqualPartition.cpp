@@ -4,7 +4,7 @@ using namespace std;
 
 // this function Same as isSubsetsum
 map<pair<int, int>, bool> mt;
-bool topdown(vector<int> v, int s)
+bool tabulation(vector<int> v, int s)
 {
     for (int i = 0; i <= v.size(); i++)
     {
@@ -47,6 +47,6 @@ int main()
     if (vs % 2)
         cout << false;
     else
-        cout << topdown(v, vs / 2);
+        cout << tabulation(v, vs / 2);
     return 0;
 }

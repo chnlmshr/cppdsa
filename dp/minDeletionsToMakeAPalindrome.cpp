@@ -1,31 +1,8 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-map<pair<int, int>, int> m;
-int memoization(string s1, string s2)
-{
-    if (!s1.size() || !s2.size())
-        return 0;
 
-    int n1 = s1.size(), n2 = s2.size();
-    if (m[make_pair(n1, n2)])
-        return m[make_pair(n1, n2)];
-    if (s1[0] == s2[0])
-    {
-        s1.erase(0, 1);
-        s2.erase(0, 1);
-        return m[make_pair(n1, n2)] = 1 + memoization(s1, s2);
-    }
-    else
-    {
-        string st1 = s1;
-        s1.erase(0, 1);
-        string st2 = s2;
-        s2.erase(0, 1);
-        return m[make_pair(n1, n2)] = max(memoization(s1, st2), memoization(st1, s2));
-    }
-}
-
+// Longest Common Subsequence
 int tabulation(string s1, string s2)
 {
     map<pair<int, int>, int> mt;
@@ -62,11 +39,13 @@ int main()
 
     string s1, s2;
 
-    cin >> s1 >> s2;
+    cin >> s1;
 
-    cout << memoization(s1, s2) << endl;
+    s2 = s1;
 
-    cout << tabulation(s1, s2);
+    reverse(s1.begin(), s1.end());
+
+    cout << s1.size() - tabulation(s1, s2);
 
     return 0;
 }

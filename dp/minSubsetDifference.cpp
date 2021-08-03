@@ -4,7 +4,7 @@ using namespace std;
 
 map<pair<int, int>, bool> mt;
 // this function Same as isSubsetsum
-void topdown(vector<int> v, int s)
+void tabulation(vector<int> v, int s)
 {
     for (int i = 0; i <= v.size(); i++)
     {
@@ -43,7 +43,7 @@ int main()
         cin >> i;
         vs += i;
     }
-    topdown(v, vs / 2);
+    tabulation(v, vs / 2);
     for (int i = vs / 2; i >= 0; i--)
         if (mt[make_pair(n, i)])
         {
