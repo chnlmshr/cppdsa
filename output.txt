@@ -1,2 +1,1 @@
-1110 1110
-Time we saved via memoization(in microseconds): -38983
+-558
