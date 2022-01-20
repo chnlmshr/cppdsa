@@ -3,7 +3,7 @@
 using namespace std;
 using namespace std::chrono;
 
-int mcm(vector<int> v, int i, int j)
+int mcm(vector<int> &v, int i, int j)
 {
     if (i >= j)
         return 0;
@@ -14,7 +14,7 @@ int mcm(vector<int> v, int i, int j)
 }
 
 map<pair<int, int>, int> m;
-int mcmMemoization(vector<int> v, int i, int j)
+int mcmMemoization(vector<int> &v, int i, int j)
 {
     if (i >= j)
         return 0;
