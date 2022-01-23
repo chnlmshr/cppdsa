@@ -1,4 +1,4 @@
-// https://www.codechef.com/SNCKQL21/submit/MINDIFF1
+// https://www.codechef.com/SNCKQL21/problems/MINDIFF1
 
 #include <bits/stdc++.h>
 #define shree ios_base ::sync_with_stdio(false);
